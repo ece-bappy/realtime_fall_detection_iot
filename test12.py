@@ -5,8 +5,8 @@ import numpy as np
 import requests  # Added for sending messages
 
 # Load the trained pose model from 'pose_model.p'
-model_dict = pickle.load(open('./pose_model.p', 'rb'))
-model = model_dict['model']
+model_dict = pickle.load(open("./pose_model1.p", "rb"))
+model = model_dict["model"]
 
 # Initialize MediaPipe Holistic model
 mp_holistic = mp.solutions.holistic
@@ -16,18 +16,17 @@ holistic = mp_holistic.Holistic(static_image_mode=False, min_detection_confidenc
 labels_dict = {0: "Pose1", 1: "Pose2", 2: "Pose3"}
 
 # Added: Replace 'YOUR_BOT_TOKEN' with your bot's API token
-BOT_TOKEN = '6817863091:AAFne4OsI1jIVgL1ujL8Eel0fkGhaSxRz8U'
-BASE_URL = f'https://api.telegram.org/bot{BOT_TOKEN}/'
+BOT_TOKEN = "6817863091:AAFne4OsI1jIVgL1ujL8Eel0fkGhaSxRz8U"
+BASE_URL = f"https://api.telegram.org/bot{BOT_TOKEN}/"
+
 
 # Added: Function to send a message to the bot
 def send_message(chat_id, text):
-    url = BASE_URL + 'sendMessage'
-    data = {
-        'chat_id': chat_id,
-        'text': text
-    }
+    url = BASE_URL + "sendMessage"
+    data = {"chat_id": chat_id, "text": text}
     response = requests.post(url, data=data)
     return response.json()
+
 
 cap = cv2.VideoCapture(0)
 
@@ -60,7 +59,9 @@ while cap.isOpened():
         predicted_pose = labels_dict[int(prediction[0])]
 
         # Display the predicted pose on the frame
-        cv2.putText(frame, predicted_pose, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+        cv2.putText(
+            frame, predicted_pose, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2
+        )
 
         # Check if "Pose2" is detected and the message hasn't been sent yet
         if predicted_pose == "Pose2" and not pose2_detected:
