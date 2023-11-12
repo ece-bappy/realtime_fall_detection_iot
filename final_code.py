@@ -31,7 +31,7 @@ labels_dict = {
 }
 
 # Open the video file
-video_path = "your_video.mp4"
+video_path = "ontor_2.mp4"
 cap = cv2.VideoCapture(video_path)
 
 continuous_pose_time = {}
@@ -41,7 +41,7 @@ not_moving_threshold_time = 2  # seconds
 # Added: Replace 'YOUR_TELEGRAM_BOT_TOKEN' with your bot's API token
 BOT_TOKEN = "6817863091:AAFne4OsI1jIVgL1ujL8Eel0fkGhaSxRz8U"
 BASE_URL = f"https://api.telegram.org/bot{BOT_TOKEN}/"
-chat_id = "6050100984"  # Replace with your actual chat ID
+chat_id = "-4060426722"  # Replace with your actual chat ID
 
 # Added: Variable to keep track of the last notification time
 last_notification_time = 0
@@ -89,7 +89,7 @@ while cap.isOpened():
 
         print(f"Predicted Pose: {predicted_pose}")
 
-        monitored_pose = 5
+        monitored_pose = 6
 
         if predicted_pose == f"Pose{monitored_pose}":
             if monitored_pose not in continuous_pose_time:

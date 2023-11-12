@@ -28,7 +28,7 @@ labels_dict = {
 }
 
 # Path to your input video in Google Drive
-video_path = "your_video.mp4"
+video_path = "ontor_2.mp4"
 
 # Open the video file
 cap = cv2.VideoCapture(video_path)

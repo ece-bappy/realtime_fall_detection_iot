@@ -31,7 +31,7 @@ labels_dict = {
 }
 
 # Open the video file
-video_path = "your_video.mp4"
+video_path = "ontor_2.mp4"
 cap = cv2.VideoCapture(video_path)
 
 continuous_pose_time = {}
@@ -86,7 +86,7 @@ while cap.isOpened():
 
         print(f"Predicted Pose: {predicted_pose}")
 
-        monitored_pose = 5
+        monitored_pose = 6
 
         if predicted_pose == f"Pose{monitored_pose}":
             if monitored_pose not in continuous_pose_time:
