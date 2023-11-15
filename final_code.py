@@ -41,7 +41,7 @@ not_moving_threshold_time = 2  # seconds
 # Added: Replace 'YOUR_TELEGRAM_BOT_TOKEN' with your bot's API token
 BOT_TOKEN = "6817863091:AAFne4OsI1jIVgL1ujL8Eel0fkGhaSxRz8U"
 BASE_URL = f"https://api.telegram.org/bot{BOT_TOKEN}/"
-chat_id = "-4060426722"  # Replace with your actual chat ID
+chat_id = "-1002029606259"  # Replace with your actual chat ID
 
 # Added: Variable to keep track of the last notification time
 last_notification_time = 0
